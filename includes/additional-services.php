@@ -13,9 +13,9 @@
     $services = array(
         new AddService("Carpentry", "fa-hammer"),
         new AddService("Siding", "fa-home"),
-        new AddService("Tile", "fa-cogs"),
-        new AddService("Kitchen", "fa-utensils"),
-        new AddService("Basement", "fa-cube"),
+        new AddService("Tile", "fa-square"),
+        new AddService("Kitchen", "fa-sink"),
+        new AddService("Basement", "fa-dungeon"),
         new AddService("Bathrooms", "fa-shower"),
     );
 ?>

@@ -1,7 +1,6 @@
 <div class="container mb-5">
     <div class="row">
-        <div class="col-1"></div>
-        <div class="col-10 benny p-5 text-center">
+        <div class="col-12 benny p-5 text-center">
             <div class="img-container"><img src="img/benny.png" /></div>
             <h1 class="mb-5">Remembering a Hero</h1>
             <p>
@@ -16,6 +15,5 @@
                 Feel free to read <a target="blank" href="https://www.porterfuneralhome.com/ObituaryDetails.aspx?id=71913&Name=Benjamin_Daniel_Kleczka">Benny's Obituary</a>
             </p>
         </div>
-        <div class="col-1"></div>
     </div>
 </div>
