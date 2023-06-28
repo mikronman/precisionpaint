@@ -4,19 +4,21 @@
     <body>
         <!-- Navigation Bar -->
         <?php include 'includes/nav.php'; ?>
-        <!-- Hero Section in Carousel Style -->
-        <?php include 'includes/carousel.php' ?>
-        <!-- Customer Review Section in Columns -->
-        <?php include 'includes/reviews.php' ?>
+        <!-- Hero Section -->
+        <?php include 'includes/hero.php' ?>
         <!-- About Section - Why Precision Painting? -->
         <?php include 'includes/about.php'  ?>
         <!-- Services Section -->
         <?php include 'includes/services.php' ?>
-        <!-- Benefits Section -->
-        <?php include 'includes/benefits.php' ?>
+        <!-- Additional Services Section -->
+        <?php include 'includes/additional-services.php' ?>
+        <!-- Customer Review Section in Columns -->
+        <?php include 'includes/reviews.php' ?>
         <!-- Contact Section -->
         <?php include 'includes/contact.php' ?>
+        <!-- Benny Section -->
+        <?php include 'includes/benny.php' ?>
         <!-- Footer -->
-        <?php  include 'includes/footer.php' ?>
+        <?php include 'includes/footer.php' ?>
     </body>
 </html>

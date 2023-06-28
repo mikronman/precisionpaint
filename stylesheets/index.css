@@ -1,47 +1,163 @@
+/* GLOBAL STYLES */
 body {
-    background-color: white;
-    margin-top: 100px;
+    margin-top: 75px;
 }
-
 h1 {
     text-align: center;
+    margin:.75em auto;
+    font-size:4em;
+}
+p, ul {
+  font-size:1.25em;
+  font-weight:light;
+}
+section {
+  padding:2em;
+}
+.btn-primary {
+  background-color:moccasin;
+  padding:1em 2.5em;
+  color:rgb(63, 40, 0);
+  border:none;
+  font-size:1.25em;
+}
+.btn-primary:hover {
+  background-color:rgb(241, 202, 133)!important;
+  color:rgb(63, 40, 0);
+}
+@media (max-width: 768px) {
+  h1 {
+    font-size:2.5em;
+  }
 }
 
-.reviews {
-    background-color: lightgray;
+/* NAV STYLES */
+nav {
+  height:75px;
 }
+nav ul li a{
+  font-size:.8em;
+}
+.nav-item {
+  padding:0 1.5em;
+}
+nav .container-fluid {
+  height:100%;
+}
+.navbar-brand {
+  height:100%;
+}
+.navbar-brand img {
+  height:100%;
+  margin-top:-5px;
+}
+
+/* HERO STYLES */
+
+.hero {
+  position: relative;
+  max-width:100%;
+}
+.hero-image {
+  position: relative;
+  width:100%;
+}
+.hero-image img {
+  width:100%;
+  min-height:800px;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust the opacity and color as needed */
+}
+.hero-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff; /* Set the desired text color */
+}
+
+/* ABOUT US STYLES */
 
 .about {
-    background-color: white;
+  background-color:cornflowerblue;
+  color:white;
+  padding-bottom:5em;
+}
+.about h2 {
+  margin-top:25px;
+}
+.about h2 svg {
+  font-size:2.5em;
+  margin-bottom: 25px;
+  color:rgb(54, 80, 129);
+}
+.about .about-card {
+  padding:1em;
+}
+.about .about-card:hover {
+  background-color:rgb(88, 132, 212);
+  border-radius:12px;
+  cursor:pointer;
 }
 
+/* SERVICES STYLES */
 .services {
-    background-color: lightgray;
-    padding-bottom: 10px;
+  padding:0!important;
 }
-
-.benefits {
-    background-color: white;
+.services .service-image {
+  padding:0!important;
+  max-height:750px;
+  overflow:hidden;
+  display: flex;
+  align-items: center;
 }
-
-.card {
-    background-color: #f5f5f5;
-    border-radius: 10px;
-    padding: 20px;
-  }
+.services .service-image img {
+  width:100%;
+  height: auto;
+  object-fit: cover;
+  object-position: center;
+  margin: auto;
+}
+.unique-section {
+  padding:25px;
+  background:cornflowerblue;
+  color:white;
+  padding:1em 5em;
+}
+.snap, .visualize {
+  width:50%;
+  margin:3px;
+}
+.sherwin-logo {
+  width:400px;
+  max-width:100%;
+}
+.additional-services {
+  background-color:#fafafa;
+  padding:4em;
+  text-align:center;
+}
+.additional-services svg{
+  font-size:3em;
+}
+.additional-services .service-item {
+  background:#ffffff;
+  padding:2em;
+  border-radius:12px;
+}
+.additional-services .service-item:hover {
+  cursor:pointer;
+  background:#f5f5f5;
+}
   
-  .card-title {
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 20px;
-  }
-  
-  .card-text {
-    font-size: 16px;
-    margin-bottom: 10px;
-  }
-  
-  /* Style the form */
+/* CONTACT FORM STYLES */
   .form-control {
     background-color: #f5f5f5;
     border-radius: 10px;
@@ -65,19 +181,44 @@ h1 {
   textarea.form-control {
     resize: vertical;
   }
-  
-  /* Style the submit button */
-  .btn-primary {
-    background-color: #007bff;
-    border: none;
-    border-radius: 10px;
-    padding: 12px 20px;
-    font-size: 16px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  .main-logo {
+    width:300px;
+    max-width:90%;
+    text-align:center;
+    margin:0 auto 50px auto;
   }
-  
-  .btn-primary:hover {
-    background-color: #0069d9;
+  .main-logo img {
+    width:100%;
+  }
+  .contact .card {
+    border:none;
+    width:100%;
+    text-align:center;
+  }
+
+  /* Carousel Reviews STYLES */
+  .reviews {
+    background-color:cornflowerblue;
+    color:white;
+  }
+  .reviews .carousel-item {
+    min-height:200px;
+  }
+
+.benny {
+  background-color:lavender;
+  border-radius:18px;
+}
+.benny img {
+  border-radius:12px;
+  max-height:300px;
+  max-width: 100%;
+}
+
+  .footer {
+    font-size:.75em;
+    color:gray;
+    background:#333333;
+    text-align:center;
+    padding:3em;
   }

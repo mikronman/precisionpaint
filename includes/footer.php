@@ -1,5 +1,3 @@
-<div class="footer" id="footer">
-  <div class="mt-5 p-4 bg-dark text-white text-center">
-    <p>Copyright © 2018 Precision Painting & Wood Rot - All Rights Reserved.</p>
-  </div>
-</div>
+<section class="footer" id="footer">
+    <p>Copyright © 2023 Precision Painting & Wood Rot, LLC - All Rights Reserved.</p>
+</section>
