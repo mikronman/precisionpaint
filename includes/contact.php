@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <form action="includes/mail.php" method="post">
+        <form id="contact-form" action="javascript:void(0);" method="post">
           <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
@@ -36,7 +36,8 @@
             <label for="message" class="form-label">Message:</label>
             <textarea class="form-control" id="message" name="message" rows="5" required></textarea>
           </div>
-          <button type="submit" class="btn-primary btn btn-dark">Submit</button>
+          <button id="submit-btn" type="submit" class="btn-primary btn btn-dark">Submit</button>
+          <div id="message-container" class="message-container"></div>
         </form>
       </div>
     </div>

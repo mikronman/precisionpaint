@@ -270,6 +270,11 @@ nav .container-fluid {
     width:100%;
     text-align:center;
   }
+  .message-container {
+    color: rgb(83, 144, 17);
+    padding: 1em 0;
+    font-size: 1.1em;
+  }
 
   /* Carousel Reviews STYLES */
   .reviews {

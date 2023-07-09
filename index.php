@@ -28,5 +28,23 @@
         <?php include 'includes/benny.php' ?>
         <!-- Footer -->
         <?php include 'includes/footer.php' ?>
+        <script>
+            document.getElementById('submit-btn').addEventListener('click', function() {
+            var form = document.getElementById('contact-form');
+            var formData = new FormData(form);
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'includes/mail.php', true);
+            xhr.onload = function() {
+                if (xhr.status === 200) {
+                    document.getElementById('message-container').textContent = 'Your message has been sent. We will be in touch with you soon!';
+                    form.reset();
+                } else {
+                    document.getElementById('message-container').textContent = 'We were unable to send your message. Please email or call us directly.';
+                }
+            };
+            xhr.send(formData);
+            });
+        </script>
     </body>
 </html>
