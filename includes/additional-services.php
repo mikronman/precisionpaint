@@ -25,7 +25,7 @@
         <h1>Additional Services We Offer</h1>
         <div class="row">
             <?php foreach ($services as $service): ?>
-            <div class="col-md-2 col-sm-4">
+            <div class="col-4 col-lg-2">
                 <div class="service-item">
                     <i class="fas <?php echo $service->icon; ?>"></i>
                     <h3><?php echo $service->name; ?></h3>

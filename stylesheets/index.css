@@ -192,9 +192,40 @@ nav .container-fluid {
   font-size:3em;
 }
 .additional-services .service-item {
-  background:#ffffff;
   padding:2em;
   border-radius:12px;
+}
+.additional-services .service-item h3 {
+  margin-top:.5em;
+}
+@media (max-width: 991px) {
+  .additional-services .service-item {
+    padding:.25em;
+    border-radius:0px;
+    margin-top:1em;
+  }
+  .additional-services .service-item h3 {
+    font-size:1em;
+  }
+  .additional-services svg {
+    font-size:2em;
+  }
+}
+@media (max-width: 1200px) {
+  .additional-services .service-item {
+    padding:.75em;
+    border-radius:0px;
+    margin-top:1em;
+  }
+  .additional-services .service-item h3 {
+    font-size:1em;
+  }
+  .additional-services svg {
+    font-size:3em;
+  }
+  h1 {
+    font-size:2.5em;
+  }
 }
 .additional-services .service-item:hover {
   cursor:pointer;
@@ -251,12 +282,17 @@ nav .container-fluid {
 
 .benny {
   background-color:lavender;
-  border-radius:18px;
+  padding:5em 2em;
 }
 .benny img {
   border-radius:12px;
   max-height:300px;
   max-width: 100%;
+}
+.benny p {
+  width:750px;
+  max-width:100%;
+  margin:0 auto;
 }
 
   .footer {
