@@ -10,6 +10,8 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
+    var_dump($_POST);
+
     $name = $_POST['name'];
     $number = $_POST['number'];
     $email = $_POST['email'];
