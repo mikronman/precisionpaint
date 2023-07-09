@@ -1,3 +1,8 @@
+<?php 
+    require __DIR__ . '/vendor/autoload.php'; 
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+?>
 <!DOCTYPE html>
     <!-- Head Metadata -->
     <?php include 'includes/head.php'; ?>

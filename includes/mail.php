@@ -1,11 +1,12 @@
 <?php
+require __DIR__ . '/../vendor/autoload.php';
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+$dotenv->load();
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
-
-require 'PHPMailer/src/Exception.php';
-require 'PHPMailer/src/PHPMailer.php';
-require 'PHPMailer/src/SMTP.php';
 
     $name = $_POST['name'];
     $number = $_POST['number'];
@@ -23,18 +24,17 @@ require 'PHPMailer/src/SMTP.php';
     $mail = new PHPMailer(true);
 try {
     //Server settings                   
-    $mail->isSMTP();                                            //Send using SMTP
-    $mail->Host       = 'smtp.office365.com';                     //Set the SMTP server to send through
-    $mail->SMTPAuth   = true;                                   //Enable SMTP authentication
-    $mail->Username   = 'benjaminkleczka@eventpagepro.com';                     //SMTP username
-    $mail->Password   = 'Southern1236993+';                               //SMTP password
-    $mail->SMTPSecure = 'tls';            //Enable implicit TLS encryption
-    $mail->Port       = 587;                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+    $mail->isSMTP();  
+    $mail->Host       = $_ENV['SMTP_HOST']; 
+    $mail->SMTPAuth   = true;
+    $mail->Username   = $_ENV['SMTP_USERNAME'];  
+    $mail->Password   = $_ENV['SMTP_PASSWORD'];                           
+    $mail->SMTPSecure = 'tls';
+    $mail->Port       = 587;                        //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('benjaminkleczka@eventpagepro.com');
-    $mail->addAddress('eventpageprorequest@outlook.com');     //Add a recipient
-    $mail->addAddress('9134569564@mailmymobile.net');               //Name is optional
+    $mail->setFrom($_ENV['SMTP_USERNAME']);
+    $mail->addAddress($_ENV['CLIENT_EMAIL']);
     //$mail->addReplyTo('info@example.com', 'Information');
     //$mail->addCC('cc@example.com');
     //$mail->addBCC('bcc@example.com');
