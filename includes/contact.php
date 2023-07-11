@@ -15,7 +15,7 @@
         </div>
       </div>
       <div class="col-md-6">
-        <form id="contact-form" action="javascript:void(0);" method="post">
+        <form id="contact-form" method="post">
           <div class="mb-3">
             <label for="name" class="form-label">Name:</label>
             <input type="text" class="form-control" id="name" name="name" required>
