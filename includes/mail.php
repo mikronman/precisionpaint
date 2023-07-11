@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Check if email is valid
         if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $response['message'] = 'Please neter a valid email address.';
+            $response['message'] = 'Please enter a valid email address.';
             header('Content-Type: application/json');
             echo json_encode($response);
             exit();
