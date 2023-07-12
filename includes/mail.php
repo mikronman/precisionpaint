@@ -1,18 +1,17 @@
 <?php
-//ini_set('display_errors', 0);
- require __DIR__ . '/../vendor/autoload.php';
 
-if (file_exists(__DIR__ . '/../.env')) {
-    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
-    $dotenv->load();
-}
-
-use SendGrid\Mail\Mail;
+require __DIR__ . '/../vendor/autoload.php';
+use Mailgun\Mailgun;
 
 $response = array(
     'success' => false,
     'message' => 'An error occurred while processing your request.'
 );
+
+if (file_exists(__DIR__ . '/../.env')) {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/..');
+    $dotenv->load();
+}
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['name'], $_POST['number'], $_POST['email'], $_POST['address'], $_POST['message'])) {
@@ -30,22 +29,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit();
         }
 
-        $subject = 'New form submission from '.$name;
+        $subject = 'New form submission from ' . $name;
+        $body = "Name: " . $name . "\n\nPhone Number: " . $number . "\n\nEmail: " . $email . "\n\nAddress: " . $address . "\n\nMessage: " . $message;
+        
+        // Instantiate the client.
+        $mgClient = Mailgun::create($_ENV['MAILGUN_API_KEY']);
+        $domain = $_ENV['MAILGUN_DOMAIN'];
 
-        $body = "Name: ".$name."\n\nPhone Number: ".$number."\n\nEmail: ".$email."\n\nAddress: ".$address."\n\nMessage: ".$message;
-
-        $mail = new Mail();
-        $mail->setFrom('mkleczkajr@gmail.com', 'Precision Painting');
-        $mail->addTo('mkleczkajr@gmail.com', 'Precision Painting Team');
-        $mail->setSubject($subject);
-        $mail->addContent("text/plain", $body);
-
-        $sendgrid = new SendGrid($_ENV['SENDGRID_API_KEY']);
+        // error_log("Subject: $subject");
+        // error_log("Body: $body");
+        //error_log("$mgClient");
+        // error_log("$domain");
 
         try {
-            $response = $sendgrid->send($mail);
+            // Make the call to the client.
+            $result = $mgClient->messages()->send($domain, [
+                'from'    => 'Excited User <mailgun@' . $domain . '>',
+                'to'      => 'Baz <mkleczkajr@gmail.com>',
+                'subject' => $subject,
+                'text'    => $body
+            ]);
 
-            if ($response->statusCode() === 202) {
+            if ($result) {
                 echo json_encode([
                     'success' => true,
                     'message' => 'Your message has been sent. We will be in touch with you soon!'
@@ -58,9 +63,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
 
         } catch (Exception $e) {
+            error_log($e->getMessage());
             echo json_encode([
                 'success' => false,
-                'message' => 'We encountered a problem trying to send your message successfully. Please try again or contact us directly.'
+                'message' => 'We encountered a problem trying to send your message successfully. Please try again or contact us directly.',
+                'error' => $e->getMessage() // Include this only if you want the client-side to see the detailed error message
             ]);
         }
     } else {
