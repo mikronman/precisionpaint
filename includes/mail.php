@@ -45,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             // Make the call to the client.
             $result = $mgClient->messages()->send($domain, [
                 'from'    => 'New Lead! <lead@' . $domain . '>',
-                'to'      => 'Baz <mkleczkajr@gmail.com>',
+                'to'      => ['Mike <mkleczkajr@gmail.com>', 'Kerry <kcprecisionpainting@gmail.com>'],
                 'subject' => $subject,
                 'text'    => $body
             ]);
