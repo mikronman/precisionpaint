@@ -24,8 +24,6 @@
         <?php include 'includes/reviews.php' ?>
         <!-- Contact Section -->
         <?php include 'includes/contact.php' ?>
-        <!-- Benny Section -->
-        <?php include 'includes/benny.php' ?>
         <!-- Footer -->
         <?php include 'includes/footer.php' ?>
         <script>
